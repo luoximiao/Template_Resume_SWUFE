@@ -1,61 +1,78 @@
-# 个人简历
+# SWUFE LaTeX Resume Template（中文）
 
-本项目为个人简历 Latex 源码存放，同时包含效果图呈现，简历入口为 resume-zh_CN.tex， 修改自项目 [resume](https://github.com/billryan/resume/)，若不想本地手动编译可以将该源码打包至 zip 直接上传至 ShareLatex 进行在线编译与预览。
+本仓库提供一个面向**西南财经大学（SWUFE）**场景的中文一页简历 **LaTeX 模板**，包含模板源码与效果图预览。  
+简历入口文件：`resume-zh_CN.tex`（如仓库实际入口不同，请以项目文件为准）。
 
-## 项目说明
+> 本模板基于开源项目进行二次改造与个性化设计（见“致谢与来源”），并针对中文排版、版式与展示风格做了调整。
 
-一个优雅的 \LaTeX\ 简历模板, 使用 \XeLaTeX\ 编译, 因为受不了古老的`res`和不太适合作为一页纸简历的`moderncv`, 遂自己动手写了这个模板， 受以下项目启发：
+---
 
-- [zachscrivena/simple-resume-cv](https://github.com/zachscrivena/simple-resume-cv)
-- [res](https://www.ctan.org/pkg/res)
-- [JianXu's CV](http://www.jianxu.net/en/files/JianXu_CV.pdf)
-- [paciorek's CV/Resume template](http://www.stat.berkeley.edu/~paciorek/computingTips/Latex_template_creating_CV_.html)
-- [How to write a LaTeX class file and design your own CV (Part 1) - ShareLaTeX](https://www.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html)
+## 预览效果
 
-*注：由于使用到 `fontspec` 包，编译器需选择 XeLaTeX。*
+![preview](./template_resume_01.png)
+
+---
 
 ## 特性
 
-- 极其容易定制和扩展 (`res`模板中枪倒地...)
-- 完善的 Unicode 字体支持, 因为用的是 \XeLaTeX\ 嘛
-- 完美的中文支持，使用 Adobefonts
-- 支持 FontAwesome 4.3.0 (目前还不支持使用别名)
+- **一页式简历布局**，适合校招/实习/科研简历
+- 结构清晰：教育背景 / 科研经历 / 项目经历 / 比赛经历 / 技能特长
+- 易于定制：通过宏命令与统一样式快速增删内容
+- 支持 Unicode 中文排版，推荐使用 **XeLaTeX**
+- 可选头像、页眉色条、分节标题色块等视觉样式（以仓库实现为准）
 
-### 效果输出
-
-![resume-zh_CN.png](./template_resume_01.png)
+---
 
 ## 使用方法
 
-1. OverLeaf 在线编译
-2. 使用较新的 \LaTeX\ 发行版在本地计算机编译
+### 方法 A：Overleaf 在线使用（推荐）
+
+1. 下载本仓库源码（ZIP）或 `git clone` 到本地
+2. 上传到 Overleaf（New Project → Upload Project）
+3. 设置编译器为：**XeLaTeX**
+4. 编译入口文件：`resume-zh_CN.tex`
+
+
+## 字体说明（非常重要）
+
+本模板历史上存在两种中文字体方案（以仓库实际文件为准）：
+
+- `zh_CN-Adobefonts_internal`：系统已安装 Adobe 中文字体时使用
+- `zh_CN-Adobefonts_external`：从外部字体目录（例如 `./fonts/`）加载
+
+## 文件结构（参考）
+
+```text
+.
+├─ resume-zh_CN.tex          # 入口文件（示例/模板）
+├─ resume.cls                # 模板 class（样式定义）
+├─ *.sty                     # 样式/功能扩展
+├─ template_resume_01.png    # 预览图
+└─ assets/                   # 图片资源（建议）
 ```
-git clone https://github.com/luoximiao/Template_Resume_SWUFE.git 
-```
 
-如果系统已确定安装有 Adobe 的四套中文字型，在文档的开始处使用包`zh_CN-Adobefonts_internal`, 如果没有安装则使用包`zh_CN-Adobefonts_external`, 在 ShareLaTeX 上编译需要使用包`zh_CN-Adobefonts_external`.
+---
 
-其他具体使用可参考给出的范例，都是极其简单易懂的宏，建议先看看 [How to write a LaTeX class file and design your own CV (Part 1) - ShareLaTeX](https://www.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html) 和 [How to write a LaTeX class file and design your own CV (Part 2) - ShareLaTeX](https://www.sharelatex.com/blog/2013/06/28/how-to-write-a-latex-class-file-and-design-your-own-cv.html) 了解下该模板的简单背景，下面就一些新定义的宏做简要介绍。
+## 致谢与来源
 
-### 宏
+本模板修改自项目：
 
-- `\name`: 姓名
-- `\contactInfo`: 联系信息, 需要三项信息，分别是{邮箱}{手机号}{个人主页}
-- `\basicContactInfo`: 简要的联系信息, 需要 项信息, 分别是{邮箱}{手机号}, 没有个人主页的用这个
-- `\section`: 用于分节, 如教育背景, 实习/项目经历等
-- `\subsection`: 用于小节标题, 无日期选项
-- `\datedsubsection`: 用于小节标题, 简历中使用最广，第二项为时间区间，自动右对齐
-- `\itemize`: 清单列表，简历中应用最广
-- `\enumerate`: 枚举列表，数字标号
+- [billryan/resume](https://github.com/billryan/resume/)
 
-### FontAwesome
+并参考/受启发于：
 
-首先在 [Font Awesome Icons](http://fortawesome.github.io/Font-Awesome/icons/) 上选中自己想使用的图标(暂不支持 alias)，然后在 [fontawesome.sty](https://github.com/billryan/resume/blob/zh_CN/fontawesome.sty) 中找到相应的宏, 将其作为普通文本一样使用。
+- [zachscrivena/simple-resume-cv](https://github.com/zachscrivena/simple-resume-cv)
+- [res (CTAN)](https://www.ctan.org/pkg/res)
+- [JianXu's CV](http://www.jianxu.net/en/files/JianXu_CV.pdf)
+- [paciorek's CV/Resume template](http://www.stat.berkeley.edu/~paciorek/computingTips/Latex_template_creating_CV_.html)
+- [How to write a LaTeX class file and design your own CV (Part 1) - ShareLaTeX](https://www.sharelatex.com/blog/2011/03/27/how-to-write-a-latex-class-file-and-design-your-own-cv.html)
+- [How to write a LaTeX class file and design your own CV (Part 2) - ShareLaTeX](https://www.sharelatex.com/blog/2013/06/28/how-to-write-a-latex-class-file-and-design-your-own-cv.html)
 
-其他的可以自行参考相应 cls 和 tex 文件。
+---
 
 ## License
 
-[The MIT License (MIT)](http://opensource.org/licenses/MIT)
+MIT License
 
-Copyrighted fonts are not subjected to this License.
+> Copyrighted fonts are not subjected to this License.  
+> 请勿在本仓库中分发受版权保护的字体文件（如 Adobe 字体）。
