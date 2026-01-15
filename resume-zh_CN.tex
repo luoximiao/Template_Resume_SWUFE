@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{resume}
+\usepackage{zh_CN-Adobefonts_external} % Simplified Chinese Support using external fonts (./fonts/zh_CN-Adobe/)
+%\usepackage{zh_CN-Adobefonts_internal} % Simplified Chinese Support using system fonts
+\usepackage{linespacing_fix} % disable extra space before next section
+\usepackage{cite}
+\usepackage{color}
+\usepackage{tikz}  % 引入 TikZ 用于绝对定位绘图
+\usepackage{fancyhdr}
+\usepackage{changepage}
+\geometry{left=0.7cm, right=0.7cm, top=1.3cm, bottom=0.7cm, headheight=0cm, headsep=0cm}
+\pagestyle{fancy}
+
+% 定义颜色
+\definecolor{blueheader}{RGB}{0, 120, 190}
+\definecolor{lightblue}{RGB}{230, 248, 255}
+
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[C]{%
+  \begin{tikzpicture}[remember picture, overlay]
+    \node[fill=blueheader, minimum width=\paperwidth, minimum height=0.8cm, anchor=north] at (current page.north) {};
+  \end{tikzpicture}%
+}
+
+% 第一页特殊设置
+\fancypagestyle{firstpage}{
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhead[C]{%
+    \begin{tikzpicture}[remember picture, overlay]
+      \node[fill=blueheader, minimum width=\paperwidth, minimum height=0.8cm, anchor=north] at (current page.north) {};
+    \end{tikzpicture}%
+  }
+}
+
+\newcommand{\sectionheader}[1]{%
+  % \noindent
+  \vspace{0.2cm}
+  {
+    \setlength{\fboxsep}{0pt}% 去除外框内边距
+    \colorbox{lightblue}{%
+      \parbox{\textwidth}{%
+        \textcolor{blueheader}{\rule{8pt}{24pt}}% 宽度10pt，高度24pt
+        \hspace{0.5cm}%
+        \raisebox{6pt}{\color{blueheader}\Large\textbf{#1}}%
+      }%
+    }%
+  }%
+  \par\vspace{0.1cm}%
+}
+
+
+\begin{document}
+\thispagestyle{firstpage}
+\pagenumbering{gobble} % suppress displaying page number
+
+
+% 用户只需要替换下面这些占位符即可：
+%   [YOUR_NAME] [YOUR_PHONE] [YOUR_EMAIL] [YOUR_AGE] [YOUR_TITLE] [AVATAR_PATH]
+% 若不想显示头像：删掉第三列 \includegraphics 那一行，或把它注释掉。
+
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{} p{0cm} p{16.6cm} r @{}} 
+    & {\Huge \heiti{\textbf{[Name]}}}
+    &
+    % 头像.png替代1.png即可
+    \raisebox{-1.55cm}[0pt][0pt]{\includegraphics[height=2.6cm]{1.png}} \\
+    \\[-0.2cm]
+    & \textbf{[Phone]} $|$ \textbf{[Email]} $|$  \\
+    & [兴趣爱好] & \\
+\end{tabular}
+
+% Education
+\sectionheader{教育背景}
+\begin{adjustwidth}{1em}{0em}
+    \textbf{西南财经大学}（211/双一流），计算机科学与技术，\textit{在读硕士研究生} \hfill (2025.9 -- 2028.6) \\
+    \textbf{西南财经大学}（211/双一流），计算机科学与技术，\textit{工学学士} \hfill (2021.9 -- 2025.6) \\
+    \hspace*{1em}\textbf{排名 [X]/[N]（前 [X]\%）}，\textbf{[奖学金/各类在校荣誉称号]}
+\end{adjustwidth}
+
+
+\sectionheader{科研经历}
+\begin{adjustwidth}{1em}{0em}
+    \textbf{论文标题}：\textit{[Paper\_Title]} \\
+    \textbf{作者角色}：[共同第一作者/第一作者/学生作者] \hfill（\textbf{Venue/Journal}）\\
+    \textbf{内容概述}：[用 2--3 句描述研究目标、核心方法、结论。]\\
+    \textbf{主要贡献}：[用 2--3 句描述你做了什么：实现/实验/消融/分析/部署。]
+\end{adjustwidth}
+
+
+\sectionheader{项目经历/实习经历}
+\begin{adjustwidth}{1em}{0em}
+    \datedsubsection{\textbf{[Project\_Title\_1]}}{[YYYY.MM] -- [YYYY.MM]}
+    \textbf{内容概述}：[说明问题背景 + 目标。]\\
+    \textbf{主要工作产出}：[在这里主要写你做了什么，分点式写法也可以。]
+    \datedsubsection{\textbf{[Project\_Title\_2]}}{[YYYY.MM] -- [YYYY.MM]}
+    \textbf{内容概述}：[--------------------------------------------------]\\
+    \textbf{主要工作产出}：[---------------------------------------------------]
+\end{adjustwidth}
+
+\sectionheader{比赛经历}
+\begin{adjustwidth}{1em}{0em}
+    \datedsubsection{\textbf{[Competition\_1]}}{[YYYY.MM] -- [YYYY.MM]}
+    \textbf{内容概述}：[任务是什么，最终名次（如：第 X 名 / Top X\%）。]\\
+    \textbf{主要产出}：[方法/结果]
+    \datedsubsection{\textbf{[Cpmpetition\_2]}}{[YYYY.MM] -- [YYYY.MM]}
+    \textbf{内容概述}：     [---------------------------------------------------]\\
+    \textbf{主要产出}：  [---------------------------------------------------]
+\end{adjustwidth}
+
+% =========================
+% Skills
+% =========================
+\sectionheader{技能特长}
+\begin{adjustwidth}{1em}{0em}
+    \begin{itemize}[parsep=0.2ex]
+        \item \textbf{英语}：CET-4/CET-6。
+        \item \textbf{技术}：Python / PyTorch；Pandas 数据处理、特征工程与可视化；熟悉 [NLP/多模态/分布式训练/部署] 等方向的常用工具。
+    \end{itemize}
+\end{adjustwidth}
+
+
+\end{document}
