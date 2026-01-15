@@ -25,7 +25,7 @@
 
 ## 使用方法
 
-### 方法 A：Overleaf 在线使用（推荐）
+### 方法：Overleaf 在线使用
 
 1. 下载本仓库源码（ZIP）或 `git clone` 到本地
 2. 上传到 Overleaf（New Project → Upload Project）
@@ -33,14 +33,14 @@
 4. 编译入口文件：`resume-zh_CN.tex`
 
 
-## 字体说明（非常重要）
+## 字体说明
 
 本模板历史上存在两种中文字体方案（以仓库实际文件为准）：
 
 - `zh_CN-Adobefonts_internal`：系统已安装 Adobe 中文字体时使用
 - `zh_CN-Adobefonts_external`：从外部字体目录（例如 `./fonts/`）加载
 
-## 文件结构（参考）
+## 文件结构
 
 ```text
 .
