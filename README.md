@@ -58,6 +58,7 @@
 本模板修改自项目：
 
 - [billryan/resume](https://github.com/billryan/resume/)
+- 感谢原创作者**qq**(https://github.com/brightest66)
 
 并参考：
 
