@@ -59,7 +59,7 @@
 
 - [billryan/resume](https://github.com/billryan/resume/)
 
-并参考/受启发于：
+并参考：
 
 - [zachscrivena/simple-resume-cv](https://github.com/zachscrivena/simple-resume-cv)
 - [res (CTAN)](https://www.ctan.org/pkg/res)
